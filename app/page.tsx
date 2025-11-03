@@ -1,6 +1,9 @@
+'use client'
+
 import Image from "next/image";
 import { ProductList} from '../lib/db'
-import { useEffect, useState } from "react";
+import { useState } from "react";
+import Menu from '../components/Menu'
 
 export default function Home() {
 
@@ -8,7 +11,9 @@ export default function Home() {
 
   return (
     <>
-      
+      <div>
+        <Menu/>
+      </div>
     </>
   );
 }
