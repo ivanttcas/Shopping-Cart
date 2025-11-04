@@ -11,7 +11,7 @@ export default function Menu() {
                 <nav>
                     <div className='container'>
                         <Link href='/'>
-                            <img src="" alt="Logo Vida Animal" />
+                            <img src="/" alt="Logo Vida Animal" />
                             <span>Vida Animal</span>
                         </Link>
 
