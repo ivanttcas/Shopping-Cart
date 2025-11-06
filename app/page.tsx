@@ -1,27 +1,32 @@
 'use client'
 
 import Image from "next/image";
-import { db } from '../lib/db'
+import { producto } from '../data/producto'
 import { useEffect, useState } from "react";
 import Menu from '../components/Menu'
 import Vets from "@/components/Vets";
 
 export default function Home() {
 
-  const [data, setData] = useState(db)
+  const [data, setData] = useState(producto)
+  const [cart, setCart] = useState([])
 
   return (
     <>
       <Menu />
 
-      <main>
-        <h2>Nuestros Productos</h2>
-        <div className="row mt-5" >
-          {data.map((vet) => (
+      <main className="container-xl mt-5">
+        <h2 className="text-center text-3xl">Nuestros Productos</h2>
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 p-6" >
+          {data.map((producto) => (
               <Vets 
-                vet={vet}
+                key={producto.id}
+                producto={producto}
+                setCart={setCart}
               />  
             ))}
+
         </div>
       </main>
     </>
