@@ -1,4 +1,4 @@
-function Vets({ producto, setCart }) {
+function Vets({ producto, addToCart }) {
 
     const { id, name, image, description, price } = producto
 
@@ -19,7 +19,7 @@ function Vets({ producto, setCart }) {
                         <button
                             className="bg-gray-800 hover:bg-gray-900 text-white py-2 px-4 rounded w-full transition-colors duration-200"
                             type="button"
-                            onClick={() => setCart(prevCart => [...prevCart, producto])}
+                            onClick={() => addToCart(producto)}
                         >Agregar al carro</button>
                     </div>
                 </div>

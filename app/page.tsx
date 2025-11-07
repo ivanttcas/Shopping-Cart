@@ -11,6 +11,20 @@ export default function Home() {
   const [data, setData] = useState(producto)
   const [cart, setCart] = useState([])
 
+  function addToCart(item) {
+    const itemExist = cart.findIndex(producto => producto.id === item.id)
+    if(itemExist >= 0) {
+      const updateCart = [...cart]
+      updateCart[itemExist].quantity++
+      setCart(updateCart)
+    } else {
+      item.quantity = 1
+      setCart([...cart, item])
+    }
+
+
+  }
+
   return (
     <>
       <Menu />
@@ -24,6 +38,7 @@ export default function Home() {
                 key={producto.id}
                 producto={producto}
                 setCart={setCart}
+                addToCart={addToCart}
               />  
             ))}
 
